@@ -1,11 +1,10 @@
 import './App.css';
-import { Button, Container, Grid, Paper, Select, TextField, Typography } from "@mui/material"
+import { Button, Container, Grid, MenuItem, Paper, Select, TextField, Typography } from "@mui/material"
 import { useEffect, useState } from 'react';
 import { createAluno, getAlunos, getTurmas } from './api/api';
 import { formataParaTracos } from './util/data';
 import Alunos from './components/Alunos';
 import Loading from './components/Loading';
-import Turmas from './components/Turmas';
 
 function App() {
 
@@ -47,11 +46,18 @@ function App() {
                     fullWidth
                     label="Turma"
                     onChange={event => {
-                      console.log(event.target.value);
                       setTurma(event.target.value);
                     }}
                   >
-                    <Turmas turmas={turmas} />
+                    {turmas.map((turma) => (
+                      <MenuItem
+                        label="Escolha a turma"
+                        key={turma.id}
+                        value={turma.id}
+                      >
+                        {turma.nome}
+                      </MenuItem>
+                    ))}
                   </Select>
 
                   <Typography sx={{ marginTop: 3 }} variant='body2'>Data de nascimento (dd/mm/aaaa)</Typography>
