@@ -8,7 +8,7 @@ const Alunos = ({ alunos }) => {
       {alunos.map((aluno) => (
         <Paper
           key={aluno.id}
-          sx={{ padding: 3, marginLeft: 3, marginBottom: 1 }}
+          sx={{ padding: 3, marginBottom: 2}}
           elevation={10}
         >
           <Typography variant="h5">

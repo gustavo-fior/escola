@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Container>
-      <Grid container marginTop={15}>
+      <Grid spacing={3} container marginTop={15}>
         {loading ?
           <Loading />
           :
@@ -69,7 +69,7 @@ function App() {
                 </form>
               </Paper>
             </Grid>
-            <Grid item md={9}>
+            <Grid item md={9} xs={12}>
               <Alunos alunos={alunos} />
             </Grid>
           </>}
